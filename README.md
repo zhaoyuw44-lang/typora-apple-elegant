@@ -2,10 +2,10 @@
 
 A premium, minimalist, typography-focused custom theme for **Typora** inspired by the sleek design of **Apple.com** and macOS. It features native Light & Dark mode adaptation, custom macOS traffic lights for code blocks, circular checkboxes, elegant borderless tables, and polished sidebar styles.
 
-![Apple Elegant Typora Theme Preview](assets/screenshot-light.png)
-
-
-*Above: A visual screenshot preview of the theme in action (this is a static image, not live installation steps).*
+| 🍏 **Apple Elegant Theme Workspace Preview** |
+| :---: |
+| ![Apple Elegant Typora Theme Preview](assets/screenshot-light.png) |
+| *Figure 1: Custom Typora workspace preview showing the macOS terminal-style code block, circular checklists, and clean typographic headers (static screenshot preview).* |
 
 ---
 
