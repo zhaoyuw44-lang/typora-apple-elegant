@@ -1,0 +1,545 @@
+/*
+ * Apple Elegant Typora Theme
+ * A premium, minimalist, typography-focused custom theme for Typora
+ * Inspired by the design language of Apple.com and macOS
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    /* Font families */
+    --font-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-monospace: 'JetBrains Mono', SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    
+    /* Core layout and backgrounds */
+    --bg-color: #ffffff;
+    --text-color: #1d1d1f;
+    --heading-color: #1d1d1f;
+    --muted-color: #86868b;
+    --border-color: #d2d2d7;
+    --light-border-color: #e5e5ea;
+    
+    /* Accents */
+    --primary-color: #0071e3;
+    --primary-hover-color: #0077ed;
+    --primary-bg-translucent: rgba(0, 113, 227, 0.05);
+    --link-color: #0066cc;
+    --link-hover-color: #004499;
+    --select-text-bg-color: rgba(0, 113, 227, 0.15);
+    --select-text-color: inherit;
+    
+    /* Code blocks */
+    --code-bg-color: #f5f5f7;
+    --code-border-color: rgba(0, 0, 0, 0.04);
+    --code-text-color: #1d1d1f;
+    --code-inline-bg: #f5f5f7;
+    --code-inline-color: #e01e5a;
+    
+    /* Sidebar / Outlines */
+    --side-bar-bg-color: #f5f5f7;
+    --side-bar-text-color: #424245;
+    --active-file-bg-color: #e8e8ed;
+    --active-file-text-color: #1d1d1f;
+    --active-file-border-color: transparent;
+    --item-hover-bg-color: rgba(0, 0, 0, 0.04);
+    --item-hover-text-color: #1d1d1f;
+    
+    /* Components */
+    --table-header-bg: #f5f5f7;
+    --table-row-even-bg: #fafafa;
+    --blockquote-border-color: #0071e3;
+    --blockquote-bg: rgba(0, 113, 227, 0.03);
+    --kbd-bg: #ffffff;
+    --kbd-border: #d2d2d7;
+    --kbd-shadow: rgba(0, 0, 0, 0.1);
+    
+    /* Scrollbars */
+    --scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
+    --scrollbar-track-color: rgba(0, 0, 0, 0.05);
+    
+    /* Metadata & markdown helper characters */
+    --md-char-color: #a1a1a6;
+    --meta-content-color: #86868b;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Core layout and backgrounds */
+        --bg-color: #161617;
+        --text-color: #f5f5f7;
+        --heading-color: #f5f5f7;
+        --muted-color: #86868b;
+        --border-color: #424245;
+        --light-border-color: #323236;
+        
+        /* Accents */
+        --primary-color: #2997ff;
+        --primary-hover-color: #54a9ff;
+        --primary-bg-translucent: rgba(41, 151, 255, 0.1);
+        --link-color: #2997ff;
+        --link-hover-color: #66b2ff;
+        --select-text-bg-color: rgba(41, 151, 255, 0.3);
+        
+        /* Code blocks */
+        --code-bg-color: #1d1d1f;
+        --code-border-color: rgba(255, 255, 255, 0.05);
+        --code-text-color: #f5f5f7;
+        --code-inline-bg: #1d1d1f;
+        --code-inline-color: #ff79c6;
+        
+        /* Sidebar / Outlines */
+        --side-bar-bg-color: #121213;
+        --side-bar-text-color: #a1a1a6;
+        --active-file-bg-color: #1d1d1f;
+        --active-file-text-color: #f5f5f7;
+        --item-hover-bg-color: rgba(255, 255, 255, 0.05);
+        --item-hover-text-color: #f5f5f7;
+        
+        /* Components */
+        --table-header-bg: #1d1d1f;
+        --table-row-even-bg: #19191a;
+        --blockquote-border-color: #2997ff;
+        --blockquote-bg: rgba(41, 151, 255, 0.05);
+        --kbd-bg: #2d2d2f;
+        --kbd-border: #424245;
+        --kbd-shadow: rgba(0, 0, 0, 0.3);
+        
+        /* Scrollbars */
+        --scrollbar-thumb-color: rgba(255, 255, 255, 0.2);
+        --scrollbar-track-color: rgba(255, 255, 255, 0.05);
+        
+        /* Metadata & markdown helper characters */
+        --md-char-color: #6e6e73;
+        --meta-content-color: #86868b;
+    }
+}
+
+/* Base styles */
+html, body {
+    font-family: var(--font-sans-serif);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.625;
+    letter-spacing: -0.011em;
+}
+
+#write {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 60px 120px 60px;
+    background-color: var(--bg-color);
+    font-size: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Headings */
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
+    color: var(--heading-color);
+    font-family: var(--font-sans-serif);
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+    line-height: 1.25;
+}
+
+#write h1 {
+    font-size: 2.25rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3em;
+    margin-top: 1em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+#write h2 {
+    font-size: 1.75rem;
+    border-bottom: 1px solid var(--light-border-color);
+    padding-bottom: 0.2em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+#write h3 {
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+#write h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+#write h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted-color);
+}
+
+#write h6 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--muted-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Paragraphs & Inline elements */
+#write p, #write li {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+#write a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+#write a:hover {
+    color: var(--link-hover-color);
+    border-bottom-color: var(--link-hover-color);
+}
+
+#write strong {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+#write em {
+    font-style: italic;
+}
+
+#write del {
+    color: var(--muted-color);
+    text-decoration: line-through;
+}
+
+#write code {
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+    background-color: var(--code-inline-bg);
+    color: var(--code-inline-color);
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    border: 1px solid var(--code-border-color);
+    transition: background-color 0.2s ease;
+}
+
+kbd {
+    font-family: var(--font-monospace);
+    font-size: 0.8em;
+    background-color: var(--kbd-bg);
+    color: var(--text-color);
+    border: 1px solid var(--kbd-border);
+    border-radius: 6px;
+    padding: 0.15em 0.5em;
+    box-shadow: 0 2px 0 var(--kbd-border), 0 3px 4px var(--kbd-shadow);
+    display: inline-block;
+    margin: 0 0.1em;
+    vertical-align: middle;
+}
+
+/* Lists & Custom Checklist checkboxes */
+#write ul, #write ol {
+    padding-left: 24px;
+    margin-bottom: 1.2em;
+}
+
+#write li > ul, #write li > ol {
+    margin-top: 0.4em;
+    margin-bottom: 0;
+}
+
+.md-task-list-item {
+    position: relative;
+    list-style-type: none !important;
+    padding-left: 24px !important;
+}
+
+.md-task-list-item > input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.md-task-list-item > input[type="checkbox"]:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-bg-translucent);
+}
+
+.md-task-list-item > input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.md-task-list-item > input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 4px;
+    height: 7px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.task-list-item.done-task {
+    text-decoration: none;
+    color: var(--muted-color);
+}
+
+/* Mac-terminal style Code Fences */
+#write pre.md-fences {
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+    background-color: var(--code-bg-color);
+    color: var(--code-text-color);
+    border: 1px solid var(--code-border-color);
+    border-radius: 12px;
+    padding: 42px 18px 18px 18px !important;
+    margin-bottom: 1.5em;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    overflow-x: auto;
+}
+
+#write pre.md-fences::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 18px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #ff5f56;
+    box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27c93f;
+}
+
+#write pre.md-fences.mock-cm {
+    padding-top: 42px !important;
+}
+
+/* Xcode-like Syntax Highlighting colors */
+.cm-s-inner .cm-comment { color: #53604f; font-style: italic; }
+.cm-s-inner .cm-keyword { color: #9b2393; font-weight: 500; }
+.cm-s-inner .cm-string { color: #c41a16; }
+.cm-s-inner .cm-number { color: #1c00cf; }
+.cm-s-inner .cm-def { color: #326d74; font-weight: 500; }
+.cm-s-inner .cm-variable-2 { color: #0071e3; }
+.cm-s-inner .cm-property { color: #3f6e74; }
+.cm-s-inner .cm-operator { color: #1d1d1f; }
+.cm-s-inner .cm-builtin { color: #5c2699; }
+.cm-s-inner .cm-meta { color: var(--meta-content-color); }
+.cm-s-inner .cm-atom { color: #1c00cf; }
+
+@media (prefers-color-scheme: dark) {
+    .cm-s-inner .cm-comment { color: #78909c; font-style: italic; }
+    .cm-s-inner .cm-keyword { color: #ff7ab2; font-weight: 500; }
+    .cm-s-inner .cm-string { color: #ff8170; }
+    .cm-s-inner .cm-number { color: #d9c97c; }
+    .cm-s-inner .cm-def { color: #64d2ff; font-weight: 500; }
+    .cm-s-inner .cm-variable-2 { color: #2997ff; }
+    .cm-s-inner .cm-property { color: #78c2b4; }
+    .cm-s-inner .cm-operator { color: #f5f5f7; }
+    .cm-s-inner .cm-builtin { color: #bca6ff; }
+    .cm-s-inner .cm-atom { color: #d9c97c; }
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    background-color: transparent !important;
+}
+
+.CodeMirror-gutters {
+    background-color: transparent !important;
+    border-right: none !important;
+}
+
+.CodeMirror-linenumber {
+    color: var(--muted-color) !important;
+    opacity: 0.55;
+}
+
+/* Glassmorphic Blockquotes */
+#write blockquote {
+    border-left: 4px solid var(--blockquote-border-color);
+    padding: 12px 18px;
+    background-color: var(--blockquote-bg);
+    border-radius: 0 12px 12px 0;
+    margin: 1.5em 0;
+    color: var(--text-color);
+}
+
+#write blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tables (Apple Numbers style) */
+#write table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8em 0;
+    font-size: 0.95em;
+    overflow-x: auto;
+    display: block;
+}
+
+#write table th, #write table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-border-color);
+}
+
+#write table th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+#write table tr:nth-child(even) {
+    background-color: var(--table-row-even-bg);
+}
+
+#write table tr:hover {
+    background-color: var(--item-hover-bg-color);
+}
+
+/* Dividers & Media */
+#write hr {
+    height: 1px;
+    border: none;
+    background-color: var(--border-color);
+    margin: 2.5em 0;
+}
+
+#write .md-image {
+    display: block;
+    max-width: 100%;
+    margin: 1.8em auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border: 1px solid var(--light-border-color);
+}
+
+/* YAML Metadata Card */
+#write pre.md-meta-block {
+    font-family: var(--font-monospace);
+    font-size: 0.85em;
+    padding: 16px;
+    background-color: var(--code-bg-color);
+    color: var(--meta-content-color);
+    border: 1px solid var(--code-border-color);
+    border-radius: 10px;
+    margin-bottom: 2.5em;
+}
+
+/* Footnotes */
+.md-footnote {
+    font-size: 0.85em;
+    color: var(--muted-color);
+}
+
+.footnotes {
+    border-top: 1px solid var(--border-color);
+    margin-top: 3em;
+    padding-top: 1.5em;
+}
+
+/* Sidebar & Outlines (Finder style) */
+#typora-sidebar {
+    background-color: var(--side-bar-bg-color) !important;
+    border-right: 1px solid var(--border-color) !important;
+}
+
+.sidebar-tab {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.file-node-content {
+    color: var(--side-bar-text-color) !important;
+    border-radius: 6px;
+    margin: 2px 8px !important;
+    padding: 4px 6px !important;
+    transition: background-color 0.15s ease;
+}
+
+.file-node-content:hover {
+    background-color: var(--item-hover-bg-color) !important;
+    color: var(--item-hover-text-color) !important;
+}
+
+.file-node-active .file-node-content {
+    background-color: var(--active-file-bg-color) !important;
+    color: var(--active-file-text-color) !important;
+    font-weight: 500;
+}
+
+.sidebar-search-area {
+    background-color: var(--side-bar-bg-color) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.sidebar-search-input {
+    background-color: var(--bg-color) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+    padding: 4px 10px !important;
+    color: var(--text-color) !important;
+}
+
+/* Slim native scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color);
+}
+
+/* Print mode optimization */
+@media print {
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    
+    #write {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    pre.md-fences {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        background-color: #f8f8f8 !important;
+        color: #000 !important;
+        padding-top: 12px !important;
+    }
+    
+    pre.md-fences::before {
+        display: none !important;
+    }
+}
