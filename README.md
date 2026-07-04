@@ -1,6 +1,11 @@
-# Apple Elegant Typora Theme 🍏
+# Apple Elegant & Apple Stark Typora Themes 🍏
 
-A premium, minimalist, typography-focused custom theme for **Typora** inspired by the sleek design of **Apple.com** and macOS. It features native Light & Dark mode adaptation, custom macOS traffic lights for code blocks, circular checkboxes, elegant borderless tables, and polished sidebar styles.
+A premium collection of minimalist, typography-focused custom themes for **Typora** inspired by the sleek design of **Apple.com** and macOS. This repository offers two distinct stylistic variations to match your personal reading and writing preferences:
+
+1. **Apple Elegant (Soft)**: Comfortable, warm-paper backgrounds (`#fafafa` in light mode, `#1c1c1e` in dark mode) to minimize eye strain during long writing sessions.
+2. **Apple Stark (High Contrast)**: Pristine, high-contrast layouts featuring pure-white (`#ffffff`) and deep macOS-black (`#161617`) backgrounds for a bold and striking modern look.
+
+Both themes feature native Light & Dark mode adaptation, custom macOS traffic lights for code blocks, circular checkboxes, elegant borderless tables, and polished sidebar styles.
 
 ### 🍏 Theme Features & Showcase
 
@@ -18,7 +23,7 @@ A premium, minimalist, typography-focused custom theme for **Typora** inspired b
 
 ## 🚀 Quick Start Installation
 
-Follow these steps to install and apply the **Apple Elegant** theme:
+Follow these steps to install and apply the themes:
 
 ### Step 1: Open Typora's Themes Folder
 1. Launch **Typora**.
@@ -27,13 +32,15 @@ Follow these steps to install and apply the **Apple Elegant** theme:
    - On **Windows/Linux**: Click `File` in the menu bar, then select `Preferences...` (or use shortcut `Ctrl + ,`).
 3. Under the **Appearance** section, locate the **Themes** area and click the **Open Theme Folder** button.
 
-### Step 2: Install the Theme CSS File
-1. Copy the file **`apple-elegant.css`** from this folder.
-2. Paste it directly into the Typora Theme Folder that opened in **Step 1**.
+### Step 2: Install the Theme CSS Files
+1. Copy one or both of the theme `.css` files:
+   - **`apple-elegant.css`**: Soft, warm-paper backgrounds.
+   - **`apple-stark.css`**: High-contrast, pure-white/deep-black backgrounds.
+2. Paste the chosen file(s) directly into the Typora Theme Folder that opened in **Step 1**.
 
 ### Step 3: Select and Enjoy!
-1. **Restart Typora** so it can scan the new theme file.
-2. In the Typora menu bar, go to **Themes** and select **Apple Elegant** (it will appear as "Apple Elegant" in the dropdown).
+1. **Restart Typora** so it can scan the new theme files.
+2. In the Typora menu bar, go to **Themes** and select either **Apple Elegant** or **Apple Stark** (they will appear as separate options in the theme menu).
 3. Experience your beautiful new workspace!
 
 ---
