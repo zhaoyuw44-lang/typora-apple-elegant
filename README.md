@@ -54,3 +54,5 @@ Follow these steps to install and apply the themes:
 * **Numbers-Inspired Tables**: Borderless vertical columns, soft gray horizontal borders, and subtle alternating row tints with ample padding for clean data sheets.
 * **Glassmorphic Blockquotes**: Soft primary borders with translucent accent fills to highlight critical thoughts without cluttering the canvas.
 * **Subtle Transitions**: Fine-tuned micro-animations across hover states, selections, and button focus ranges for a responsive, living interface.
+
+
